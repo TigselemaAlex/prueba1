@@ -1,0 +1,42 @@
+<p-card>
+  <h3>Formulario de servicio básico</h3>
+  <form [formGroup]="group">
+    <div>
+      <span class="p-float-label mb-5">
+        <input id="nombre" type="text" formControlName="nombre" pInputText>
+        <label for="nombre">Nombre</label>
+      </span>
+      <span class="p-float-label mb-5">
+        <input id="valor" type="number" formControlName="valor" pInputText>
+        <label for="valor">Valor</label>
+      </span>
+    </div>
+
+    <div>
+      <span class="p-float-label mb-5">
+        <input id="descripcion" type="text" formControlName="descripcion" pInputText>
+        <label for="descripcion">Descripción</label>
+      </span>
+      <span class="p-float-label mb-5">
+        <input id="ciudad" type="text" formControlName="ciudad" pInputText>
+        <label for="ciudad">Ciudad</label>
+      </span>
+    </div>
+    <div>
+
+      <p-dropdown [options]="clientesCurrent" [(ngModel)]="selectedClient" formControlName="cliente"
+        placeholder="Seleccione un cliente" optionLabel="cliente" id="cliente">
+      </p-dropdown>
+
+      <div class="btn-group">
+        <button pButton pRipple type="button" label="Aceptar" class="p-button-raised p-button-info"
+          (click)="save()"></button>
+        <button pButton pRipple type="button" label="Cancelar" class="p-button-raised p-button-danger"></button>
+      </div>
+
+
+    </div>
+
+
+  </form>
+</p-card>

@@ -1,0 +1,24 @@
+<p-card>
+  <p-table [columns]="cols" [value]="data" responsiveLayout="scroll" [scrollable]="true" scrollHeight="350px">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{col | uppercase }}
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          <span *ngIf="!rowData[col]['nombre']">
+            {{rowData[col]}}
+          </span>
+          <span *ngIf="rowData[col]['nombre']">
+            {{rowData[col]['nombre']}} {{rowData[col]['apellido']}}
+          </span>
+
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</p-card>
